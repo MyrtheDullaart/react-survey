@@ -16,6 +16,7 @@ function Checkboxes({ formdata, setFormData }) {
                         type="checkbox"
                         value="swimming"
                         onChange={handleChange}
+                        checked={formdata.spendTime["swimming"]}
                     /> Swimming
                 </label>
             </li>
@@ -26,6 +27,7 @@ function Checkboxes({ formdata, setFormData }) {
                         type="checkbox" 
                         value="bathing" 
                         onChange={handleChange}
+                        checked={formdata.spendTime["bathing"]}
                     /> Bathing
                 </label>
             </li>
@@ -36,6 +38,7 @@ function Checkboxes({ formdata, setFormData }) {
                         type="checkbox"
                         value="chatting"
                         onChange={handleChange}
+                        checked={formdata.spendTime["chatting"]}
                     />Chatting
                 </label>
             </li>
@@ -45,7 +48,8 @@ function Checkboxes({ formdata, setFormData }) {
                         name="spendTime" 
                         type="checkbox" 
                         value="noTime"
-                        onChange={handleChange} 
+                        onChange={handleChange}
+                        checked={formdata.spendTime["noTime"]} 
                     />I don't like to spend time with it
                 </label>
             </li>

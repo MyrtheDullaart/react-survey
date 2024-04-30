@@ -4,8 +4,18 @@ import Form from "./Form";
 function Survey() {
   const [open, setOpen] = useState(false); //Ignore this state
   const [formData, setFormData] = useState({
-    color: "",
-    spendTime: "",
+    color: {
+      value1 : false,
+      value2 : false,
+      value3 : false,
+      value4 : false
+    },
+    spendTime: {
+      swimming: false,
+      bathing: false,
+      chatting: false,
+      noTime: false
+    },
     review: "",
     username: "",
     email: ""

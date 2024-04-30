@@ -5,6 +5,23 @@ function Form({ formdata, setFormData }) {
     function handleSubmit(e) {
         e.preventDefault()
         console.log(formdata)
+        setFormData({
+            color: {
+                value1 : false,
+                value2 : false,
+                value3 : false,
+                value4 : false
+              },
+              spendTime: {
+                swimming: false,
+                bathing: false,
+                chatting: false,
+                noTime: false
+              },
+              review: "",
+              username: "",
+              email: ""
+          })
     }
 
     function handleChange(e) {
@@ -32,7 +49,8 @@ function Form({ formdata, setFormData }) {
                     name="review"
                     cols="30"
                     rows="10"
-                    onChange={handleChange}>
+                    onChange={handleChange}
+                    value={formdata.review}>
                 </textarea>
             </label>
             <label>
