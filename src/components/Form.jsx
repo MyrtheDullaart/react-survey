@@ -1,27 +1,14 @@
 import Checkboxes from "./Checkboxes"
 import RadioButtons from "./RadioButtons"
 
-function Form({ formdata, setFormData }) {
+function Form({ formdata, setFormData, answers, setAnswers }) {
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(formdata)
-        setFormData({
-            color: {
-                value1 : false,
-                value2 : false,
-                value3 : false,
-                value4 : false
-              },
-              spendTime: {
-                swimming: false,
-                bathing: false,
-                chatting: false,
-                noTime: false
-              },
-              review: "",
-              username: "",
-              email: ""
-          })
+        setAnswers([
+            ...answers,
+            formdata
+        ])
+        e.target.reset()
     }
 
     function handleChange(e) {

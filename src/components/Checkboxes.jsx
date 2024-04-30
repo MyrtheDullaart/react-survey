@@ -3,7 +3,9 @@ function Checkboxes({ formdata, setFormData }) {
         const {name, value} = e.target
         setFormData({
             ...formdata,
-            [name] : value
+            [name] : [
+                ...formdata.spendTime,
+                value]            
         })
     }
 
