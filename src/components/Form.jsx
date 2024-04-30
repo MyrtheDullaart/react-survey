@@ -1,3 +1,5 @@
+import Checkboxes from "./Checkboxes"
+
 function Form() {
     return (
         <form className="form">
@@ -8,15 +10,15 @@ function Form() {
             </div>
             <div className="form__group">
                 <h3>How do you like to spend time with your rubber duck</h3>
-                
+                <Checkboxes />
             </div>
             <label>
                 What else have you got to say about your rubber duck?
                 <textarea
-                name="review"
-                cols="30"
-                rows="10"
-                ></textarea>
+                    name="review"
+                    cols="30"
+                    rows="10">
+                </textarea>
             </label>
             <label>
                 Put your name here (if you feel like it):<input
@@ -27,9 +29,9 @@ function Form() {
             <label>
                 Leave us your email pretty please??
                 <input
-                type="email"
-                name="email"
-                value="" />
+                    type="email"
+                    name="email"
+                    value="" />
             </label>
             <input className="form__submit" type="submit" value="Submit Survey!" />
         </form>
