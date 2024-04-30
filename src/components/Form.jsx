@@ -8,7 +8,13 @@ function Form({ formdata, setFormData, answers, setAnswers }) {
             ...answers,
             formdata
         ])
-        e.target.reset()
+        setFormData({
+            color: "",
+            spendTime: [],
+            review: "",
+            username: "",
+            email: ""
+          })
     }
 
     function handleChange(e) {
