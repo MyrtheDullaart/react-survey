@@ -13,15 +13,16 @@ function Survey() {
   })
 
   const [answers, setAnswers] = useState([])
-  console.log(formData)
+  const [edit, setEdit] = useState('')
+  
   return (
     <main className="survey">
       <section className={`survey__list ${open ? "open" : ""}`}>
         <h2>Answers list</h2>
-        <AnswersList answers={answers} setFormData={setFormData}/>
+        <AnswersList answers={answers} setFormData={setFormData} setEdit={setEdit}/>
       </section>
       <section className="survey__form">
-        <Form formdata={formData} setFormData={setFormData} answers={answers} setAnswers={setAnswers}/>
+        <Form formdata={formData} setFormData={setFormData} answers={answers} setAnswers={setAnswers} setEdit={setEdit} edit={edit}/>
       </section>
     </main>
   );

@@ -9,7 +9,6 @@ const answersSet = {
 };
 
 function ItemsList({ list }) {
-  console.log(list)
   return (
     <ul>
       {list.map((item, index) => (
@@ -20,10 +19,10 @@ function ItemsList({ list }) {
 }
 
 // This is the main component being exported from this file
-export default function AnswersItem({ answerItem, setFormData,}){
-
+export default function AnswersItem({ answerItem, setFormData, setEdit, index}){
   function handleClick() {
     setFormData(answerItem)
+    setEdit(index)
   }
 
   return (

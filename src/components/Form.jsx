@@ -1,20 +1,34 @@
 import Checkboxes from "./Checkboxes"
 import RadioButtons from "./RadioButtons"
 
-function Form({ formdata, setFormData, answers, setAnswers }) {
+function Form({ formdata, setFormData, answers, setAnswers, setEdit, edit }) {
     function handleSubmit(e) {
-        e.preventDefault()
-        setAnswers([
-            ...answers,
-            formdata
-        ])
-        setFormData({
-            color: "",
-            spendTime: [],
-            review: "",
-            username: "",
-            email: ""
-          })
+        if (edit === 0 || edit ) {
+            e.preventDefault()
+            editAnswers()
+            setEdit('')
+            setFormData({
+                color: "",
+                spendTime: [],
+                review: "",
+                username: "",
+                email: ""
+              })
+        } else {
+            e.preventDefault()
+            setAnswers([
+                ...answers,
+                formdata
+            ])
+            setFormData({
+                color: "",
+                spendTime: [],
+                review: "",
+                username: "",
+                email: ""
+              })
+        }
+
     }
 
     function handleChange(e) {
@@ -23,6 +37,10 @@ function Form({ formdata, setFormData, answers, setAnswers }) {
             ...formdata,
             [name] : value
         })
+    }
+
+    function editAnswers() {
+        setAnswers([...answers.slice(0, edit), formdata, ...answers.slice(edit + 1)])
     }
 
     return (
